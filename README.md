@@ -105,7 +105,7 @@ khent@WebServer: sudo snap install ngrok
 Untuk web server ini saya tidak membutuhkan database karena saya hanya ingin menampikan data diri saya saja secara lengkap saja.
 
 - Berikut Beberapa Hasil Dokumentasi Mulai dari Install Apache sampai dengan Ngrok
-```
+
 ![VirtualBox_WebServer_18_12_2023_17_03_29](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/90f2d632-7d59-4fa2-bb6f-f18e9c6fb77f)
 
 ![VirtualBox_WebServer_18_12_2023_17_52_27](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/3f4216e9-7ca4-4be4-b813-f74fe6f4e285)
@@ -130,5 +130,4 @@ Untuk web server ini saya tidak membutuhkan database karena saya hanya ingin men
 
 ![VirtualBox_WebServer_18_12_2023_18_03_29](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/7c2ea66f-1c97-42c6-a289-65aa1cd6b7d8)
 
-```
 - SEKIAN DARI SAYA TERIMAKASIH
