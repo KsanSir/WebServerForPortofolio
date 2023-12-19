@@ -1,13 +1,13 @@
 # Monitoring Server #
 Tugas yang di buat pada final project kali ini adalah menginstall php monitoring server dengan php versi 7.4.
-![alifmf _-20231206-00012](https://drive.google.com/file/d/1Okh44LfyV6zycC6AxtqWrkDdNywkje_I/view?usp=drive_link)
+![Picsart_23-11-30_18-42-27-335](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/e1138685-3582-45cc-b7ac-6d92e4921660)
 
 ***
 
-## Apa Itu PHP Monitoring Server? ##
-PHP Monitoring Server adalah sebuah service yang memeriksa apakah situs web dan server Anda aktif dan berjalan. Dengan user interface berbasis web di mana Anda dapat mengelola layanan dan situs web Anda, dan Anda dapat mengelola pengguna untuk setiap server dengan nomor ponsel dan alamat email. Untuk contoh dari penggunaannya adalah sebagai berikut :
+## Apa Itu Web Server? ##
+Web server adalah perangkat lunak atau perangkat keras yang menyediakan layanan untuk mengakses halaman web atau konten web melalui internet. Fungsi utama dari web server adalah melayani permintaan dari klien (biasanya browser web) dengan menyediakan halaman web yang diminta. Ketika seseorang mengakses situs web melalui browser mereka, permintaan dikirim ke web server, dan web server ini kemudian mengirimkan halaman web tersebut kembali ke browser pengguna. Untuk contoh dari penggunaannya adalah sebagai berikut :
 
-![image](https://github.com/alifmf2309/Monitoring-Server-menggunakan-PHP-Monitoring-Server/assets/117895406/def86bde-0e62-4af4-a40e-350384f2590e)
+![Screenshot 2023-12-19 235747](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/4acf821a-636e-4868-ab0b-a1d7829c8e11)
 
 Ini adalah contoh ketika memonitoring sebuah website yaitu google.com. Demikian deskripsinya adalah sebagai berikut :
 
