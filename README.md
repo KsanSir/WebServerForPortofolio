@@ -1,6 +1,6 @@
-# Monitoring Server #
-Tugas yang di buat pada final project kali ini adalah menginstall php monitoring server dengan php versi 7.4.
-![Picsart_23-11-30_18-42-27-335](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/e1138685-3582-45cc-b7ac-6d92e4921660)
+# WEBSITE SERVER #
+
+Tugas yang di buat pada final project kali ini adalah WEB Server Untuk Saya tampilkan Portofolio saya. menggunakan WebServer Ubuntu 22.04
 
 ***
 
@@ -15,33 +15,24 @@ Ubuntu 22.04 64bit
 ## Bahan dan Alat ##
 1. File ISO Ubuntu 22.04, dapat di download di https://ubuntu.com/download/desktop
 2. SSH Server untuk Mencoba Client.
-4. PHP 7.4 / diatasnya.
-5. MySQL.
-6. MariaDB.
-7. PHP Server Monitor.
+3. MySQL.
+4. Ngrok
 ***
 
 ## Service Yang Digunakan ##
 1. SSH Server
 2. DHCP Server
 3. Apache2
-4. MariaDB
-5. PHP Versi 7.4
-6. FTP Server menggunakan FileZilla
 ***
 
 ## Update Progress ##
-1. 17 September 2023 Instalasi SSH Server
-2. 17 September 2023 Instalasi DHCP Server
-3. 12 Oktober 2023  Instalasi Apache2 dan MariaDB
-4. 14 Oktober 2023 Instalasi PHP Versi 7.4
-5. 16 Oktober 2023 Instalasi FTP Server (Service pada CentOS dan software FileZilla pada Windows)
-6. 20 - 21 Oktober 2023 Instalasi PHP Server Monitor versi v3.6.0
+1. 17 Desember 2023 Instalasi SSH Server
+2. 17 Desember 2023 Instalasi DHCP Server
+3. 17 Desember 2023  Instalasi Apache2 dan Mysql
+5. 16 Desember 2023 Instalasi Ubuntu pada Virtualbox
 ***
 
 ## Panduan Instalasi ##
-Git adalah sistem kontrol versi terdistribusi yang melacak perubahan dalam setiap set file komputer, biasanya digunakan untuk mengoordinasikan pekerjaan di antara programmer yang secara kolaboratif mengembangkan kode sumber selama pengembangan perangkat lunak. Repositori Git menawarkan banyak layanan, salah satunya GitHub.
-
 
 - Update Package / Service yang Terinstall
 >Guna mengupdate packages maupun service yang dibutuhkan.
@@ -53,95 +44,91 @@ Complete!
 
 - Install Git terlebih dahulu
 ```
-[root@localhost ~]# yum install git
-[root@localhost ~]# git clone https://github.com/phpservermon/phpservermon
-[root@localhost ~]# cd phpservermon
-[root@localhost phpservermon]#
+khent@WebServer: sudo apt update && upgrade
 ```
 #
 
-- Dilanjut untuk install php composer.phar
+- Dilanjut untuk install Apache2 serta cek status apache
 
-Apabila sudah mendapatkan clone package PHP Server Monitor dari GitHub, masuk ke direktori <code>phpservermon</code> lalu install package <code>composer.phar</code>.
 ```
-[root@localhost phpservermon]# php composer.phar install
-Loading composer repositories with package information
-Installing dependencies (including require-dev) from lock file
-Package operations: 19 installs, 0 updates, 0 removals
-    Failed to download mnsami/composer-custom-directory-installer from dist: The zip extension and unzip command are both missing, skipping.
-Your command-line PHP is using multiple ini files. Run `php --ini` to show them.
+khent@WebServer: sudo apt install Apache2
+khent@WebServer: sudo systemctl status Apache
+
 ```
 
+- Dilanjut untuk mengubah kepemilikan folder '/var/www/html' ke www-data serta Beri Izin anggota grup untuk mengubah folder '/var/www/html'
 
->Apabila terdapat error <code>Failed, The zip extension and unzip command are both missing</code>, install dahulu package zip unzip dengan command <code>yum install zip unzip</code>.
-#
-
-- Install Zip Unzip dilanjut untuk install php composer.phar
 ```
-[root@localhost phpservermon]# yum install zip unzip
-Installed:
-  unzip.x86_64 0:6.0-24.el7_9                                                    zip.x86_64 0:3.0-11.el7
+khent@WebServer: sudo chown -R www-data:www-data /var/www/html
+khent@WebServer: sudo chmod -R g+rw /var/www/html
+khent@WebServer: sudo usermod -a -G www-data [my username]
 
-Complete!
-[root@localhost phpservermon]# php composer.phar install
-.
-.
-Generating autoload files
-[root@localhost phpservermon]#
-```
-#
-
-- Install Vagrant
-
->Vagrant adalah sebuah service sejenis docker. Vagrant sebagai tool open source untuk membangun seluruh environment development virtual. Vagrant adalah level di atas Docker dalam hal abstraksi (Abtraksi adalah proses atau perbuatan memisahkan sesuatu dari hal-hal yang tidak penting atau tidak relevan).
-
-
-***Step 1 : Install VirtualBox***
-
-Prasyaratnya adalah Anda perlu menginstal VirtualBox sebelum bekerja di Vagrant karena Vagrant menggunakan VirtualBox untuk menginstal virtual machine.
-```
-[root@localhost ~]# yum -y install gcc dkms make qt libgomp patch
-[root@localhost ~]# yum -y install kernel-headers kernel-devel binutils glibc-headers glibc-devel font-forge
 ```
 
+- Tambahkan Rule untuk Apache di Firewall
 
-***Step 2 : Tambahkan Repositori VirtualBox***
+```
+khent@WebServer: sudo ufw allow 'Apache'
+khent@WebServer: sudo ufw status
 
-Untuk menginstall VirtualBox dari repo VirtualBox.
-```
-[root@localhost ~]# cd /etc/yum.repo.d/
-[root@localhost yum.repo.d]# wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
-```
-
-Buka dan edit file config repositori VirtualBox. Ganti baseurl dengan https://www.virtualbox.org/wiki/Linux_Downloads lalu write and exit.
-```
-[root@localhost ~]# cd /etc/yum.repo.d/
-[root@localhost yum.repo.d]# nano virtualbox.repo
-baseurl=https://www.virtualbox.org/wiki/Linux_Downloads
 ```
 
-
-***Step 3 : Instal VirtualBox menggunakan perintah `yum`***
-
-Untuk menginstall VirtualBox dari repo VirtualBox.
+- Install Mysql
 ```
-[root@localhost ~]# wget https://download.virtualbox.org/virtualbox/7.0.12/VirtualBox-7.0-7.0.12_159484_el7-1.x86_64.rpm
-[root@localhost ~]# yum install -y VirtualBox-7.0-7.0.12_159484_el7-1.x86_64.rpm
-Installed:
-  VirtualBox-7.0.x86_64 0:7.0.12_159484_el7-1
-Complete!
+khent@WebServer: sudo apt install mysql-server
+khent@WebServer: sudo mysqk_secure_installation
+
 ```
 
-***Step 4 : Instal Vagrant***
+- Install PHP
 ```
-[root@localhost ~]# wget https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.rpm
-[root@localhost ~]# yum install -y vagrant_1.8.1_x86_64.rpm
+khent@WebServer: sudo apt install php libaapache2-mod-php php-mysql
+
 ```
 
-***Step 5 : Verifikasi Vagrant***
+- Install SSH dan Configurasikan SSH Tersebut https://ubuntu.com/server/docs/service-openssh
+```
+khent@WebServer: sudo apt install openssh-client
+khent@WebServer: sudo apt install openssh-server
 
-Dengan mengecek versi untuk memastikan Vargant sudah terinstall
 ```
-[root@localhost ~]# vagrant -v
-Vagrant 1.8.1
+
+- Install NGROK
 ```
+khent@WebServer: sudo apt update
+khent@WebServer: sudo apt install snapd
+khent@WebServer: sudo snap install ngrok
+
+```
+
+## WEB Server For Portofolio ##
+Untuk web server ini saya tidak membutuhkan database karena saya hanya ingin menampikan data diri saya saja secara lengkap saja.
+
+- Berikut Beberapa Hasil Dokumentasi Mulai dari Install Apache sampai dengan Ngrok
+```
+![VirtualBox_WebServer_18_12_2023_17_03_29](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/90f2d632-7d59-4fa2-bb6f-f18e9c6fb77f)
+
+![VirtualBox_WebServer_18_12_2023_17_52_27](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/3f4216e9-7ca4-4be4-b813-f74fe6f4e285)
+
+![VirtualBox_WebServer_18_12_2023_17_43_54](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/412ed563-7b7a-43a4-8381-b393d9e0f5e0)
+
+![VirtualBox_WebServer_18_12_2023_17_48_28](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/b0deb5df-a6f3-43fa-bf12-770e8b091e13)
+
+![VirtualBox_WebServer_18_12_2023_17_55_01](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/6196bad6-059f-4277-9a28-fa02db99e523)
+
+![VirtualBox_WebServer_18_12_2023_17_23_35](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/191f61a2-d45c-4b6c-a7dc-89490258e657)
+
+![VirtualBox_WebServer_18_12_2023_17_24_18](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/0a5dadd1-7f49-41a0-b963-7a3446513f1e)
+
+![VirtualBox_WebServer_18_12_2023_17_24_55](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/f6186ed3-db38-4056-a34e-abcd8a13ff28)
+
+![VirtualBox_WebServer_18_12_2023_18_03_11](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/25fa8537-6e8a-409b-b991-89ba2981cb6b)
+
+![VirtualBox_WebServer_18_12_2023_18_03_02](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/b6f335ca-f899-42e9-966c-b2bb3f4e00e3)
+
+![VirtualBox_WebServer_18_12_2023_18_03_47](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/ecd53d83-5f11-450f-a24c-38f73816cf66)
+
+![VirtualBox_WebServer_18_12_2023_18_03_29](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/7c2ea66f-1c97-42c6-a289-65aa1cd6b7d8)
+
+```
+- SEKIAN DARI SAYA TERIMAKASIH
