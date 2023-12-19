@@ -130,4 +130,18 @@ Untuk web server ini saya tidak membutuhkan database karena saya hanya ingin men
 
 ![VirtualBox_WebServer_18_12_2023_18_03_29](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/7c2ea66f-1c97-42c6-a289-65aa1cd6b7d8)
 
+![Screenshot 2023-12-19 234929](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/8a174ece-9d77-4faa-9a28-2c7d550f8d69)
+
+![Screenshot 2023-12-19 235050](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/5fc3c090-3879-4300-9f19-df3e48baa30b)
+
+![Screenshot 2023-12-19 235136](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/1af46694-e016-4152-8f94-092c5c075048)
+
+![Screenshot 2023-12-19 235209](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/afd2ab95-1060-43bf-a600-9da30f6543e7)
+
+![Screenshot 2023-12-19 235546](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/e0a58539-84aa-45e5-9bcc-4134730998b1)
+
+![Screenshot 2023-12-19 235700](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/d3e16dff-eb06-4b77-8f7c-f3f209263ceb)
+
+![Screenshot 2023-12-19 235747](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/6e181036-66a4-4844-a65e-be2cf73f543b)
+
 - SEKIAN DARI SAYA TERIMAKASIH
