@@ -9,25 +9,12 @@ Web server adalah perangkat lunak atau perangkat keras yang menyediakan layanan 
 
 ![Screenshot 2023-12-19 235747](https://github.com/KsanSir/WebServerForPortofolio/assets/142091461/4acf821a-636e-4868-ab0b-a1d7829c8e11)
 
-Ini adalah contoh ketika memonitoring sebuah website yaitu google.com. Demikian deskripsinya adalah sebagai berikut :
-
-![image](https://github.com/alifmf2309/Monitoring-Server-menggunakan-PHP-Monitoring-Server/assets/117895406/6a8e9590-b4eb-4c2e-acc7-257b435cca29)
-***
-
 ## OS Server ##
-CentOS 7.9 64bit
+Ubuntu 22.04 64bit
 ***
-
-## Repository Yang Digunakan ##
-1. Local Repository (Insert DVD / CD CentOS-7-x86_64-DVD-2009.iso lalu di mount dan buat repository)
-2. Cloud Repository (Menggunakan wget (link package yang akan di install)
-3. Epel Repository (Extra Packages for Enterprise Linux. Di install servicenya dari repository online maupun offline)
-***
-
 ## Bahan dan Alat ##
-1. File ISO CentOS 7, dapat di download di http://isoredirect.centos.org/centos/7/isos/x86_64/
-2. FTP Server menggunakan FileZilla untuk memudahkan manajemen file.
-3. SSH Server untuk meremote server.
+1. File ISO Ubuntu 22.04, dapat di download di https://ubuntu.com/download/desktop
+2. SSH Server untuk Mencoba Client.
 4. PHP 7.4 / diatasnya.
 5. MySQL.
 6. MariaDB.
