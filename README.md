@@ -11,18 +11,13 @@ Web server adalah perangkat lunak atau perangkat keras yang menyediakan layanan 
 
 ## OS Server ##
 Ubuntu 22.04 64bit
-***
-## Bahan dan Alat ##
-1. File ISO Ubuntu 22.04, dapat di download di https://ubuntu.com/download/desktop
-2. SSH Server untuk Mencoba Client.
-3. MySQL.
-4. Ngrok
-***
 
-## Service Yang Digunakan ##
-1. SSH Server
-2. DHCP Server
-3. Apache2
+***
+## Bahan dan Alat Serta Service Yang Di Gunakan ##
+1. File ISO Ubuntu 22.04, dapat di download di https://ubuntu.com/download/desktop
+2. SSH Server
+4. Apache2
+5. Ngrok
 ***
 
 ## Update Progress ##
@@ -33,14 +28,6 @@ Ubuntu 22.04 64bit
 ***
 
 ## Panduan Instalasi ##
-
-- Update Package / Service yang Terinstall
->Guna mengupdate packages maupun service yang dibutuhkan.
-```
-[root@localhost ~]# yum -y update
-Complete!
-```
-#
 
 - Install Git terlebih dahulu
 ```
